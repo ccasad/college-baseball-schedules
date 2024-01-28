@@ -1,0 +1,622 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SIDEARM Sports//NONSGML SIDEARM//EN
+X-WR-CALNAME:Baseball - gomason.com
+X-PUBLISHED-TTL:PT120M
+BEGIN:VEVENT
+UID:vcal_12671-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240216T170000Z
+DTEND:20240216T200000Z
+LOCATION:Conway\, SC
+SUMMARY:@ Coastal Carolina University
+DESCRIPTION:@ Coastal Carolina University\n https://gomason.com/calendar.aspx?game_id=12671&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12671&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12672-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240217T170000Z
+DTEND:20240217T200000Z
+LOCATION:Conway\, SC
+SUMMARY:vs Duke University
+DESCRIPTION:vs Duke University\n https://gomason.com/calendar.aspx?game_id=12672&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12672&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12673-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240218T160000Z
+DTEND:20240218T190000Z
+LOCATION:Conway\, SC
+SUMMARY:vs Indiana University
+DESCRIPTION:vs Indiana University\n https://gomason.com/calendar.aspx?game_id=12673&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12673&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12674-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240220T190000Z
+DTEND:20240220T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Coppin State University
+DESCRIPTION:vs Coppin State University\n https://gomason.com/calendar.aspx?game_id=12674&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12674&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12675-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240223T200000Z
+DTEND:20240223T230000Z
+LOCATION:Holly Springs\, NC
+SUMMARY:vs Purdue University
+DESCRIPTION:vs Purdue University\n https://gomason.com/calendar.aspx?game_id=12675&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12675&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12676-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240224T180000Z
+DTEND:20240224T210000Z
+LOCATION:Holly Springs\, NC
+SUMMARY:vs Purdue University
+DESCRIPTION:vs Purdue University\n https://gomason.com/calendar.aspx?game_id=12676&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12676&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12677-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240224T213000Z
+DTEND:20240225T003000Z
+LOCATION:Holly Springs\, NC
+SUMMARY:vs Purdue University
+DESCRIPTION:vs Purdue University\n https://gomason.com/calendar.aspx?game_id=12677&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12677&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12927-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240225T180000Z
+DTEND:20240225T210000Z
+LOCATION:
+SUMMARY:vs Purdue University
+DESCRIPTION:vs Purdue University\n https://gomason.com/calendar.aspx?game_id=12927&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12927&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12678-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240228T190000Z
+DTEND:20240228T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs James Madison University
+DESCRIPTION:vs James Madison University\n https://gomason.com/calendar.aspx?game_id=12678&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12678&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12679-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240301T190000Z
+DTEND:20240301T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Fairfield University
+DESCRIPTION:vs Fairfield University\n https://gomason.com/calendar.aspx?game_id=12679&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12679&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12680-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240302T190000Z
+DTEND:20240302T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Fairfield University
+DESCRIPTION:vs Fairfield University\n https://gomason.com/calendar.aspx?game_id=12680&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12680&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12681-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240303T170000Z
+DTEND:20240303T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Fairfield University
+DESCRIPTION:vs Fairfield University\n https://gomason.com/calendar.aspx?game_id=12681&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12681&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12683-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240308T190000Z
+DTEND:20240308T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Monmouth University
+DESCRIPTION:vs Monmouth University\n https://gomason.com/calendar.aspx?game_id=12683&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12683&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12684-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240309T190000Z
+DTEND:20240309T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Monmouth University
+DESCRIPTION:vs Monmouth University\n https://gomason.com/calendar.aspx?game_id=12684&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12684&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12686-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240310T170000Z
+DTEND:20240310T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Monmouth University
+DESCRIPTION:vs Monmouth University\n https://gomason.com/calendar.aspx?game_id=12686&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12686&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12687-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240312T180000Z
+DTEND:20240312T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Bucknell University
+DESCRIPTION:vs Bucknell University\n https://gomason.com/calendar.aspx?game_id=12687&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12687&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12688-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240313T180000Z
+DTEND:20240313T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs University of Maryland Eastern Shore
+DESCRIPTION:vs University of Maryland Eastern Shore\n https://gomason.com/calendar.aspx?game_id=12688&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12688&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12928-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240315T220000Z
+DTEND:20240316T010000Z
+LOCATION:Greensboro\, NC
+SUMMARY:@ North Carolina A&T State University
+DESCRIPTION:@ North Carolina A&T State University\n https://gomason.com/calendar.aspx?game_id=12928&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12928&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12929-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240316T190000Z
+DTEND:20240316T220000Z
+LOCATION:Greensboro\, NC
+SUMMARY:@ North Carolina A&T State University
+DESCRIPTION:@ North Carolina A&T State University\n https://gomason.com/calendar.aspx?game_id=12929&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12929&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12930-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240317T170000Z
+DTEND:20240317T200000Z
+LOCATION:Greensboro\, NC
+SUMMARY:@ North Carolina A&T State University
+DESCRIPTION:@ North Carolina A&T State University\n https://gomason.com/calendar.aspx?game_id=12930&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12930&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12692-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240319T190000Z
+DTEND:20240319T220000Z
+LOCATION:Farmville\, VA
+SUMMARY:@ Longwood University
+DESCRIPTION:@ Longwood University\n https://gomason.com/calendar.aspx?game_id=12692&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12692&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12693-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240322T190000Z
+DTEND:20240322T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Villanova University
+DESCRIPTION:vs Villanova University\n https://gomason.com/calendar.aspx?game_id=12693&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12693&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12694-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240323T180000Z
+DTEND:20240323T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Villanova University
+DESCRIPTION:vs Villanova University\n https://gomason.com/calendar.aspx?game_id=12694&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12694&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12695-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240324T170000Z
+DTEND:20240324T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Villanova University
+DESCRIPTION:vs Villanova University\n https://gomason.com/calendar.aspx?game_id=12695&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12695&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12696-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240326T190000Z
+DTEND:20240326T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Virginia Military Institute
+DESCRIPTION:vs Virginia Military Institute\n https://gomason.com/calendar.aspx?game_id=12696&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12696&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12697-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240329T180000Z
+DTEND:20240329T210000Z
+LOCATION:Richmond\, VA
+SUMMARY:@ University of Richmond
+DESCRIPTION:@ University of Richmond\n https://gomason.com/calendar.aspx?game_id=12697&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12697&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12698-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240330T170000Z
+DTEND:20240330T200000Z
+LOCATION:Richmond\, VA
+SUMMARY:@ University of Richmond
+DESCRIPTION:@ University of Richmond\n https://gomason.com/calendar.aspx?game_id=12698&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12698&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12699-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240331T160000Z
+DTEND:20240331T190000Z
+LOCATION:Richmond\, VA
+SUMMARY:@ University of Richmond
+DESCRIPTION:@ University of Richmond\n https://gomason.com/calendar.aspx?game_id=12699&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12699&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12700-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240403T220000Z
+DTEND:20240404T010000Z
+LOCATION:Fairfax\, Va., Spuhler Field
+SUMMARY:vs Longwood University
+DESCRIPTION:vs Longwood University\n https://gomason.com/calendar.aspx?game_id=12700&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12700&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12701-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240405T190000Z
+DTEND:20240405T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs George Washington University
+DESCRIPTION:vs George Washington University\n https://gomason.com/calendar.aspx?game_id=12701&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12701&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12702-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240406T180000Z
+DTEND:20240406T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs George Washington University
+DESCRIPTION:vs George Washington University\n https://gomason.com/calendar.aspx?game_id=12702&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12702&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12703-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240407T170000Z
+DTEND:20240407T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs George Washington University
+DESCRIPTION:vs George Washington University\n https://gomason.com/calendar.aspx?game_id=12703&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12703&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12704-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240410T220000Z
+DTEND:20240411T010000Z
+LOCATION:Lexington\, VA
+SUMMARY:@ Virginia Military Institute
+DESCRIPTION:@ Virginia Military Institute\n https://gomason.com/calendar.aspx?game_id=12704&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12704&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12705-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240412T160000Z
+DTEND:20240412T190000Z
+LOCATION:Dayton\, OH
+SUMMARY:@ University of Dayton
+DESCRIPTION:@ University of Dayton\n https://gomason.com/calendar.aspx?game_id=12705&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12705&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12706-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240413T160000Z
+DTEND:20240413T190000Z
+LOCATION:Dayton\, OH
+SUMMARY:@ University of Dayton
+DESCRIPTION:@ University of Dayton\n https://gomason.com/calendar.aspx?game_id=12706&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12706&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12707-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240414T160000Z
+DTEND:20240414T190000Z
+LOCATION:Dayton\, OH
+SUMMARY:@ University of Dayton
+DESCRIPTION:@ University of Dayton\n https://gomason.com/calendar.aspx?game_id=12707&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12707&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12708-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240417T220000Z
+DTEND:20240418T010000Z
+LOCATION:Charlottesville\, VA
+SUMMARY:@ University of Virginia
+DESCRIPTION:@ University of Virginia\n https://gomason.com/calendar.aspx?game_id=12708&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12708&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12709-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240419T190000Z
+DTEND:20240419T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs University of Massachusetts
+DESCRIPTION:vs University of Massachusetts\n https://gomason.com/calendar.aspx?game_id=12709&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12709&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12710-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240420T180000Z
+DTEND:20240420T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs University of Massachusetts
+DESCRIPTION:vs University of Massachusetts\n https://gomason.com/calendar.aspx?game_id=12710&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12710&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12711-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240421T170000Z
+DTEND:20240421T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs University of Massachusetts
+DESCRIPTION:vs University of Massachusetts\n https://gomason.com/calendar.aspx?game_id=12711&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12711&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12712-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240423T220000Z
+DTEND:20240424T010000Z
+LOCATION:Blacksburg\, VA
+SUMMARY:@ Virginia Tech
+DESCRIPTION:@ Virginia Tech\n https://gomason.com/calendar.aspx?game_id=12712&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12712&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12713-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240426T190000Z
+DTEND:20240426T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Virginia Commonwealth University
+DESCRIPTION:vs Virginia Commonwealth University\n https://gomason.com/calendar.aspx?game_id=12713&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12713&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12714-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240427T180000Z
+DTEND:20240427T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Virginia Commonwealth University
+DESCRIPTION:vs Virginia Commonwealth University\n https://gomason.com/calendar.aspx?game_id=12714&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12714&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12715-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240428T170000Z
+DTEND:20240428T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Virginia Commonwealth University
+DESCRIPTION:vs Virginia Commonwealth University\n https://gomason.com/calendar.aspx?game_id=12715&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12715&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12716-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240501T220000Z
+DTEND:20240502T010000Z
+LOCATION:Tysons\, VA
+SUMMARY:vs Georgetown University
+DESCRIPTION:vs Georgetown University\n https://gomason.com/calendar.aspx?game_id=12716&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12716&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12717-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240503T220000Z
+DTEND:20240504T010000Z
+LOCATION:Saint Louis\, MO
+SUMMARY:@ Saint Louis University
+DESCRIPTION:@ Saint Louis University\n https://gomason.com/calendar.aspx?game_id=12717&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12717&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12718-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240504T180000Z
+DTEND:20240504T210000Z
+LOCATION:Saint Louis\, MO
+SUMMARY:@ Saint Louis University
+DESCRIPTION:@ Saint Louis University\n https://gomason.com/calendar.aspx?game_id=12718&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12718&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12719-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240505T160000Z
+DTEND:20240505T190000Z
+LOCATION:Saint Louis\, MO
+SUMMARY:@ Saint Louis University
+DESCRIPTION:@ Saint Louis University\n https://gomason.com/calendar.aspx?game_id=12719&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12719&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12720-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240507T190000Z
+DTEND:20240507T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs University of Maryland Eastern Shore
+DESCRIPTION:vs University of Maryland Eastern Shore\n https://gomason.com/calendar.aspx?game_id=12720&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12720&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12721-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240508T190000Z
+DTEND:20240508T220000Z
+LOCATION:Towson\, MD
+SUMMARY:@ Towson University
+DESCRIPTION:@ Towson University\n https://gomason.com/calendar.aspx?game_id=12721&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12721&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12722-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240510T190000Z
+DTEND:20240510T220000Z
+LOCATION:Philadelphia\, PA
+SUMMARY:@ Saint Joseph's University
+DESCRIPTION:@ Saint Joseph's University\n https://gomason.com/calendar.aspx?game_id=12722&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12722&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12723-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240511T180000Z
+DTEND:20240511T210000Z
+LOCATION:Philadelphia\, PA
+SUMMARY:@ Saint Joseph's University
+DESCRIPTION:@ Saint Joseph's University\n https://gomason.com/calendar.aspx?game_id=12723&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12723&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12724-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240512T170000Z
+DTEND:20240512T200000Z
+LOCATION:Philadelphia\, PA
+SUMMARY:@ Saint Joseph's University
+DESCRIPTION:@ Saint Joseph's University\n https://gomason.com/calendar.aspx?game_id=12724&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12724&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12725-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240516T190000Z
+DTEND:20240516T220000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Davidson College
+DESCRIPTION:vs Davidson College\n https://gomason.com/calendar.aspx?game_id=12725&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12725&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12726-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240517T180000Z
+DTEND:20240517T210000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Davidson College
+DESCRIPTION:vs Davidson College\n https://gomason.com/calendar.aspx?game_id=12726&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12726&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+BEGIN:VEVENT
+UID:vcal_12727-gomason.com
+DTSTAMP:20240115T145741Z
+DTSTART:20240518T170000Z
+DTEND:20240518T200000Z
+LOCATION:Fairfax\, VA, Spuhler Field
+SUMMARY:vs Davidson College
+DESCRIPTION:vs Davidson College\n https://gomason.com/calendar.aspx?game_id=12727&amp;sport_id=1
+URL:https://gomason.com/calendar.aspx?game_id=12727&amp;sport_id=1
+PRIORITY:3
+END:VEVENT
+END:VCALENDAR
