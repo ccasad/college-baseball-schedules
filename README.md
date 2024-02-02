@@ -1,6 +1,6 @@
 TO DO
 
-* (DAD) Create a git repo
+* (DONE) Create a git repo
 
 * (DAD) Get schedules
   - from all schools in google spreadsheet (D1, D2, D3 if possible, but start with D1)
