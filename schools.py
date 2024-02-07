@@ -2,38 +2,21 @@ import json
 import gspread  # Using gspread: https://docs.gspread.org/en/latest/oauth2.html
                 # service_account.json file needs to go in ~/.config/gspread
 
+from common import extract_domain, request_url
+from bs4 import BeautifulSoup
 from constants import CURRENT_PATH
-from common import is_valid_json
 
-  # schools = [
-  #   {
-  #     "name": "George Washington University",
-  #     "id": 131469,
-  #     "url_main": "https://www.gwu.edu/",
-  #     "division": "NCAA D1",
-  #     "url_baseball": "https://gwsports.com/sports/baseball/schedule/2024",
-  #     "city": "Washington",
-  #     "state": "DC",
-  #     "miles_away": 33,
-  #     "hours_within": 1,
-  #     "schedule_saved": False,
-  #     "url_athletics": "gwsports.com"
-  #   }
-  # ]
 
 def get_schools():
   schools = []
 
   try:
     with open(f'{CURRENT_PATH}/schools.json', 'r') as file:
-      if is_valid_json(file):
-        schools = json.load(file)
-      else:
-        print("The schools.json file is not valid JSON")
+      schools = json.load(file)
   except FileNotFoundError:
     print("The schools.json file does not exist")
   except Exception as e:
-    print(f"An error occurred opening file: {e}")
+    print(f"An error occurred opening schools.json file: {e}")
   
   if (schools == []):
     try:
@@ -54,6 +37,13 @@ def get_schools():
       print(f"An error occurred opening the Google Sheets file: {e}")
 
   return schools
+
+
+def find_school_by_id(schools, school_id):
+  for school in schools:
+    if school.get("id") == school_id:
+      return school
+  return None
 
 
 def _clean_google_sheet_school(school):
@@ -112,33 +102,55 @@ def _clean_google_sheet_school(school):
     del school["Notes"]
 
 
-def get_stats(schools):
-  schedules_saved_d1 = 0
-  schedules_saved_d2 = 0
-  schedules_saved_d3 = 0
-  schedules_not_saved_d1 = 0
-  schedules_not_saved_d2 = 0
-  schedules_not_saved_d3 = 0
+def get_athletics_url(school):
+  if "url_athletics" not in school or school['url_athletics'] == "":
+    school['url_athletics'] = None
 
-  for index, school in enumerate(schools, start=1):
-    print(f"School {index} of {len(schools)}")
+  if school['url_athletics'] is None:
+    if school['url_baseball'] != "" and school['url_baseball'] is not None:
+        school['url_athletics'] = [f"https://{extract_domain(school['url_baseball'])}"]
 
-  #   if school['division'] == "NCAA D1":
-  #     schedules_not_saved_d1 += 1
-  #   elif school['division'] == "NCAA D2":
-  #     schedules_not_saved_d2 += 1
-  #   elif school['division'] == "NCAA D3":
-  #     schedules_not_saved_d3 += 1
-  # else:
-  #   if school['division'] == "NCAA D1":
-  #     schedules_saved_d1 += 1
-  #   elif school['division'] == "NCAA D2":
-  #     schedules_saved_d2 += 1
-  #   elif school['division'] == "NCAA D3":
-  #     schedules_saved_d3 += 1
+    if school['url_athletics'] is None:
+      if school['url_main'] != "" and school['url_main'] is not None:
+        find_athletics_url(school)
 
-  # print(f"SAVED d1={schedules_saved_d1} d2={schedules_saved_d2} d3={schedules_saved_d3}")
-  # print(f"NOT SAVED d1={schedules_not_saved_d1} d2={schedules_not_saved_d2} d3={schedules_not_saved_d3}")
+  if school["url_athletics"] is not None:
+    for url in school["url_athletics"]:
+      if not url.startswith("http"):
+        school["url_athletics"] = f"https://{url}"
+      if url.endswith('/'):
+        school["url_athletics"] = url[:-1]  # Remove the last forward slash
 
-  # SAVED d1=36 d2=0 d3=55
-  # NOT SAVED d1=40 d2=62 d3=93
+  if school['url_main'] != "" and school['url_main'] is not None:
+    if not school["url_main"].startswith("http"):
+      school["url_main"] = f"https://{school['url_main']}"
+
+    if school["url_main"].endswith('/'):
+      school["url_main"] = school["url_main"][:-1]  # Remove the last forward slash
+
+
+def find_athletics_url(school):
+  url = school['url_main']
+  if not school["url_main"].startswith("http"):
+    url = f"https://{school['url_main']}"
+    school['url_main'] = url
+
+  html = request_url(url)
+  if html:
+    soup = BeautifulSoup(html, 'html.parser')
+    links = soup.find_all('a')
+
+    if len(links) > 0:
+      urls = []
+      for link in links:
+        for content in link.contents:
+          c = str(content).lower()
+          if "athletics" in c:
+            if link and link['href']:
+              if link['href'].startswith("http") or "." in link['href']:
+                urls.append(f"https://{extract_domain(link['href'])}")
+              else:
+                urls.append(f"{school['url_main']}{link['href']}")
+
+      school["url_athletics"] = urls
+          

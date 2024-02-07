@@ -25,7 +25,8 @@ def extract_domain(url):
 def request_url(url):
   success = None
   try:
-    response = requests.get(url)
+    headers = {'Content-Type': 'text/plain; charset=utf-8', 'User-Agent': 'PostmanRuntime/7.33.0', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive'}
+    response = requests.get(url, headers=headers)
     response.raise_for_status()  # Raise an HTTPError for bad responses
     if response.text:
       success = response.text
