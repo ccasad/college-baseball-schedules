@@ -1,9 +1,7 @@
+import logging
 import requests
 import json
-# import brotli
-# import gzip
 
-# from io import BytesIO
 from datetime import datetime
 from common import is_valid_json, extract_domain
 from constants import CURRENT_PATH
@@ -18,7 +16,7 @@ def process(school):
       if sports:
         for sport in sports:
           if sport and sport["shortName"] == "baseball" and sport["scheduleId"]:
-            domain = extract_domain(url)
+            domain = extract_domain(url, True)
             schedule_url = f"https://admin.{domain}/services/schedule_txt.ashx?schedule={sport['scheduleId']}"
             headers = {'Content-Type': 'text/plain; charset=utf-8', 'User-Agent': 'PostmanRuntime/7.33.0', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive'}
             response = requests.get(schedule_url, headers=headers)
@@ -38,14 +36,16 @@ def process(school):
                     json.dump(schedule, file)
 
                   school["processor"] = "beta"
+                  school['url_athletics'] = url
                   success = True
                   break
             else:
-              print(f"Error getting content with status code: {response.status_code}")
+              logging.info(f"process() in processor_beta.py: Issue getting content with status code: {response.status_code}")
     if success:
       break
-    
+
   return success
+
 
 def _parse_html_schedule(text):
   schedule_data = None
@@ -79,9 +79,6 @@ def _parse_html_schedule(text):
         # Update the start index for the next iteration
         start = end_idx + 2  # Adding 2 to skip the space
 
-      # Print column names and start/end indices (for debugging purposes)
-      # for name, start_idx, end_idx in columns:
-      #   print(f"Column: {name}, Start: {start_idx}, End: {end_idx}")
 
       # Initialize an empty list to store schedule data
       schedule_data = []
@@ -106,12 +103,11 @@ def _parse_html_schedule(text):
       for event in schedule_data:
         clean_event(event)
         
-    else:
-      print("No text found")
   except Exception as e:
-    print(f"An unexpected error occurred parsing html schedule: {e}")
+    logging.error(f"process() in _parse_html_schedule.py: An unexpected error occurred: {e}")
   
   return schedule_data
+
 
 def clean_event(event):
   if "Date" in event:

@@ -1,3 +1,4 @@
+import logging
 import json
 
 from datetime import datetime
@@ -72,14 +73,14 @@ def get_stats():
     with open(f'{CURRENT_PATH}/stats.json', 'r') as file:
       stats_original = json.load(file)
   except FileNotFoundError:
-    print("The stats.json file does not exist")
+    logging.error(f"get_stats() in stats.py: The stats.json file does not exist")
   except Exception as e:
-    print(f"An error occurred opening stats.json file: {e}")
+    logging.error(f"get_stats() in stats.py: An error occurred opening stats.json file: {e}")
 
   try:
     stats_original.append(stats)
     with open(f'{CURRENT_PATH}/stats.json', 'w') as file:
       json.dump(stats_original, file)
   except Exception as e:
-    print(f"An error occurred writing to stats.json file: {e}")
+    logging.error(f"get_stats() in stats.py: An error occurred writing to stats.json file: {e}")
 

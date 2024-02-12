@@ -1,3 +1,5 @@
+import logging
+
 from schools import get_athletics_url
 from processor_alpha import process as process_alpha
 from processor_beta import process as process_beta
@@ -13,7 +15,7 @@ def fetch_schedule(school):
       success = process_beta(school)  
 
   except Exception as e:
-    print(f"An error occurred while in fetch_schedule: {e}")
+    logging.error(f"fetch_schedule() in schedules.py: An error occurred while in fetch_schedule: {e}")
 
   if not success:
     school['url_athletics'] = None

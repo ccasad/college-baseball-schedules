@@ -1,26 +1,27 @@
+import logging
 import json
 import gspread  # Using gspread: https://docs.gspread.org/en/latest/oauth2.html
                 # service_account.json file needs to go in ~/.config/gspread
 
-from common import extract_domain, request_url
+from common import extract_domain, request_url, find_url
 from bs4 import BeautifulSoup
 from constants import CURRENT_PATH
 
 
 def get_schools():
   schools = []
-
+  
   try:
     with open(f'{CURRENT_PATH}/schools.json', 'r') as file:
       schools = json.load(file)
+      logging.info(f"get_schools() in schools.py: Successfully got schools from schools.json")
   except FileNotFoundError:
-    print("The schools.json file does not exist")
+    logging.error(f"get_schools() in schools.py: The schools.json file does not exist")
   except Exception as e:
-    print(f"An error occurred opening schools.json file: {e}")
+    logging.error(f"get_schools() in schools.py: An error occurred opening schools.json file: {e}")
   
   if (schools == []):
     try:
-      print("Pulling file from Google Sheets")
       gc = gspread.service_account()
       sh = gc.open("Colleges with Baseball")
       worksheet = sh.worksheet("Schools")
@@ -28,13 +29,13 @@ def get_schools():
       if schools:
         for school in schools:
           _clean_google_sheet_school(school)
-
+      logging.info(f"get_schools() in schools.py: Successfully got schools from Google Sheets")
     except gspread.exceptions.SpreadsheetNotFound:
-      print("Google Spreadsheet does not exist")
+      logging.error(f"get_schools() in schools.py: Google Spreadsheet does not exist")
     except gspread.exceptions.WorksheetNotFound:
-      print("Google Worksheet does not exist")
+      logging.error(f"get_schools() in schools.py: Google Worksheet does not exist")
     except Exception as e:
-      print(f"An error occurred opening the Google Sheets file: {e}")
+      logging.error(f"get_schools() in schools.py: An error occurred opening the Google Sheets file: {e}")
 
   return schools
 
@@ -115,11 +116,23 @@ def get_athletics_url(school):
         find_athletics_url(school)
 
   if school["url_athletics"] is not None:
+    urls = []
+    main_domain = extract_domain(school['url_main'], True)
     for url in school["url_athletics"]:
+      # if the url has the same domain as the url_main then lets check the url to 
+      # see if that url actually has the true athletics url on its page so call the
+      # find_athletics_url function again passing in the url
+      if main_domain in url:
+        find_athletics_url(school, url)
+
+    for url in school["url_athletics"]:    
       if not url.startswith("http"):
-        school["url_athletics"] = f"https://{url}"
+        url = f"https://{url}"
       if url.endswith('/'):
-        school["url_athletics"] = url[:-1]  # Remove the last forward slash
+        url = url[:-1]  # Remove the last forward slash
+      urls.append(url)
+
+    school["url_athletics"] = urls
 
   if school['url_main'] != "" and school['url_main'] is not None:
     if not school["url_main"].startswith("http"):
@@ -129,28 +142,38 @@ def get_athletics_url(school):
       school["url_main"] = school["url_main"][:-1]  # Remove the last forward slash
 
 
-def find_athletics_url(school):
-  url = school['url_main']
-  if not school["url_main"].startswith("http"):
-    url = f"https://{school['url_main']}"
-    school['url_main'] = url
+def find_athletics_url(school, url=None):
+  if not url:
+    url = school['url_main']
+    if not school["url_main"].startswith("http"):
+      url = f"https://{school['url_main']}"
+      school['url_main'] = url
 
-  html = request_url(url)
-  if html:
-    soup = BeautifulSoup(html, 'html.parser')
-    links = soup.find_all('a')
+  try:
+    html = request_url(url)
+    if html:
+      soup = BeautifulSoup(html, 'html.parser')
+      links = soup.find_all('a')
 
-    if len(links) > 0:
-      urls = []
-      for link in links:
-        for content in link.contents:
-          c = str(content).lower()
-          if "athletics" in c:
-            if link and link['href']:
-              if link['href'].startswith("http") or "." in link['href']:
-                urls.append(f"https://{extract_domain(link['href'])}")
-              else:
-                urls.append(f"{school['url_main']}{link['href']}")
+      if len(links) > 0:
+        urls = []
+        if url != school["url_main"]:
+          urls.append(url)
 
-      school["url_athletics"] = urls
-          
+        for link in links:
+          for content in link.contents:
+            c = str(content).lower()
+            if "athletics" in c:
+              if link and link['href']:
+                url_found = find_url(link['href'])
+                if url_found:
+                  urls.append(f"https://{extract_domain(url_found)}")
+                else:
+                  urls.append(f"{school['url_main']}{link['href']}")
+
+        school["url_athletics"] = list(set(urls))
+
+  except Exception as e:
+    logging.error(f"find_athletics_url() in schools.py: An error occurred: {e}")
+    logging.error(f"find_athletics_url() in schools.py: {school['id']} has a bad url_main")
+        

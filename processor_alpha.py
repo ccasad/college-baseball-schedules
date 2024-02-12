@@ -1,4 +1,6 @@
+import logging
 import json
+import icalendar
 
 from constants import CURRENT_PATH
 from common import is_valid_json, request_url
@@ -10,20 +12,17 @@ def process(school):
   if school['url_athletics'] is not None:
     for url in school['url_athletics']:
       athletic_url = f"{url}/sports/baseball/schedule/2024"
-      if (athletic_url != ""):
+      if (not success and athletic_url != ""):
         try:
           html = request_url(athletic_url)
-          # if that url doesn't work try this one
-          if html == None:
-            html = request_url(f"{athletic_url}/sports/bsb/2023-24/schedule")
-          
+
           if html != None:
             if html:
               soup = BeautifulSoup(html, 'html.parser')
               scripts = soup.find_all("script", attrs={"type": "application/ld+json"})
               if scripts and scripts[0] and scripts[0].contents and scripts[0].contents[0]:
                 contents = scripts[0].contents[0]
-                if contents and is_valid_json(contents):
+                if contents and is_valid_json(contents) and "awayTeam" in contents:
                   schedule = json.loads(contents)
                   if schedule and len(schedule) > 10:
                     for event in schedule:
@@ -33,11 +32,61 @@ def process(school):
                     with open(file_name, 'w') as file:
                       json.dump(schedule, file)
                       school["processor"] = "alpha"
+                      school['url_athletics'] = url
                       success = True
+          else:
+            # see if the ical file is available
+            cal_data = request_url(f"{url}/sports/bsb/2023-24/schedule?print=ical")
+
+            if cal_data:
+              # Parse the iCal data
+              cal = icalendar.Calendar.from_ical(cal_data)
+
+              # Iterate through events in the calendar
+              event = None
+              events = []
+              for component in cal.walk():
+                if component.name == "VEVENT":
+                  event = clean_calendar_event(component)
+                  events.append(event)
+          
+              if len(events) > 0:
+                file_name = f"{CURRENT_PATH}/schedules/{school['id']}.json"
+                with open(file_name, 'w') as file:
+                  json.dump(events, file)
+                  school["processor"] = "alpha"
+                  school['url_athletics'] = url
+                  success = True
+
         except Exception as e:
-          print(f"An unexpected error occurred: {e}")
+          logging.error(f"process() in processor_alpha.py: An unexpected error occurred: {e}")
         
   return success
+
+
+def clean_calendar_event(component):
+  event = {}
+  if component.get("dtstart"):
+    date_time = component.get("dtstart").dt
+    if date_time:
+      event["date"] = date_time.strftime("%Y-%m-%dT%H:%M:%S")
+
+  if component.get("summary"):
+    if " vs. " in component.get("summary"):
+      event["at_home"] = True
+      parts = component.get("summary").split(" vs. ", 1)
+      if len(parts) == 2:
+        event["opponent"] = parts[1]
+    else:
+      event["at_home"] = False
+      parts = component.get("summary").split(" at ", 1)
+      if len(parts) == 2:
+        event["opponent"] = parts[1]
+
+  if component.get("location"):
+    event["location"] = component.get("location")
+
+  return event
 
 
 def clean_event(event):
