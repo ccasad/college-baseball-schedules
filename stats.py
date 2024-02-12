@@ -79,8 +79,10 @@ def get_stats():
 
   try:
     stats_original.append(stats)
+    stats_sort = sorted(stats_original, key=lambda x: datetime.fromisoformat(x['date_processed']), reverse=True)
+
     with open(f'{CURRENT_PATH}/stats.json', 'w') as file:
-      json.dump(stats_original, file)
+      json.dump(stats_sort, file)
   except Exception as e:
     logging.error(f"get_stats() in stats.py: An error occurred writing to stats.json file: {e}")
 

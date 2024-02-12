@@ -3,16 +3,19 @@ import requests
 import json
 
 from datetime import datetime
-from common import is_valid_json, extract_domain
+from common import is_valid_json, extract_domain, request_url
 from constants import CURRENT_PATH
 
-def process(school):
+def process(school, url):
   success = False
   
-  for url in school['url_athletics']:
-    req_api = requests.get(f"{url}/api/v2/Sports")
-    if req_api and req_api.text and is_valid_json(req_api.text):
-      sports = json.loads(req_api.text)
+  athletic_url = f"{url}/api/v2/Sports"
+
+  try:
+    response_api = request_url(athletic_url)
+
+    if response_api and response_api.text and is_valid_json(response_api.text):
+      sports = json.loads(response_api.text)
       if sports:
         for sport in sports:
           if sport and sport["shortName"] == "baseball" and sport["scheduleId"]:
@@ -41,9 +44,10 @@ def process(school):
                   break
             else:
               logging.info(f"process() in processor_beta.py: Issue getting content with status code: {response.status_code}")
-    if success:
-      break
 
+  except Exception as e:
+    logging.error(f"process() in processor_beta.py: An unexpected error occurred: {e}")
+  
   return success
 
 

@@ -143,11 +143,14 @@ def get_athletics_url(school):
 
 
 def find_athletics_url(school, url=None):
+  second_try = False
   if not url:
     url = school['url_main']
     if not school["url_main"].startswith("http"):
       url = f"https://{school['url_main']}"
       school['url_main'] = url
+  else:
+    second_try = True
 
   try:
     html = request_url(url)
@@ -163,11 +166,20 @@ def find_athletics_url(school, url=None):
         for link in links:
           for content in link.contents:
             c = str(content).lower()
-            if "athletics" in c:
+            found = False
+            if second_try and "visit" in c or "explore" in c:
+              found = True
+            elif not second_try and "athletics" in c:
+              found = True
+
+            if found:
               if link and link['href']:
                 url_found = find_url(link['href'])
                 if url_found:
-                  urls.append(f"https://{extract_domain(url_found)}")
+                  if url_found.lower() == school["url_main"].lower() or extract_domain(url_found.lower()) == extract_domain(school["url_main"].lower(), True):
+                    url_found = link['href']
+
+                  urls.append(url_found.lower())
                 else:
                   urls.append(f"{school['url_main']}{link['href']}")
 

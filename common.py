@@ -32,7 +32,7 @@ def extract_domain(url, ignore_subdomain=False):
 
 def find_url(text):
   # Define a regex pattern for matching URLs
-  url_pattern = re.compile(r'https?://\S+?\.(?:com|edu)')
+  url_pattern = re.compile(r'https?://\S+?\.(?:com|edu|org)')
 
   # Find all matches in the text
   matches = re.findall(url_pattern, text)
