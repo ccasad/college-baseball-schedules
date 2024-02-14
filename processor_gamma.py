@@ -11,11 +11,11 @@ def process(school, url):
   athletic_url = f"{url}/sports/bsb/2023-24/schedule?print=ical"
 
   try:
-    response_ical = request_url(athletic_url)
+    response = request_url(athletic_url)
 
-    if response_ical:
+    if response and response.get('text'):
       # Parse the iCal data
-      cal = icalendar.Calendar.from_ical(response_ical)
+      cal = icalendar.Calendar.from_ical(response.get('text'))
 
       # Iterate through events in the calendar
       event = None

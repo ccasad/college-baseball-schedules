@@ -130,6 +130,12 @@ def get_athletics_url(school):
         url = f"https://{url}"
       if url.endswith('/'):
         url = url[:-1]  # Remove the last forward slash
+
+      # check for forwarded urls
+      response = request_url(url, True)
+      if response and response.get("url") != url:
+        url = response.get("url")
+
       urls.append(url)
 
     school["url_athletics"] = urls
@@ -153,9 +159,9 @@ def find_athletics_url(school, url=None):
     second_try = True
 
   try:
-    html = request_url(url)
-    if html:
-      soup = BeautifulSoup(html, 'html.parser')
+    response = request_url(url)
+    if response and response.get('text'):
+      soup = BeautifulSoup(response.get('text'), 'html.parser')
       links = soup.find_all('a')
 
       if len(links) > 0:
@@ -167,7 +173,7 @@ def find_athletics_url(school, url=None):
           for content in link.contents:
             c = str(content).lower()
             found = False
-            if second_try and "visit" in c or "explore" in c:
+            if second_try and ("visit" in c or "explore" in c or "sports" in c or "team" in c):
               found = True
             elif not second_try and "athletics" in c:
               found = True

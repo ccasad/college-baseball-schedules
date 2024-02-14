@@ -11,10 +11,10 @@ def process(school, url):
   athletic_url = f"{url}/sports/baseball/schedule"
 
   try:
-    response_html = request_url(athletic_url)
-
-    if response_html:
-      soup = BeautifulSoup(response_html, 'html.parser')
+    response = request_url(athletic_url)
+    
+    if response and response.get('text'):
+      soup = BeautifulSoup(response.get('text'), 'html.parser')
       scripts = soup.find_all("script", attrs={"type": "application/ld+json"})
       if scripts and scripts[0] and scripts[0].contents and scripts[0].contents[0]:
         contents = scripts[0].contents[0]

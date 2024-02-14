@@ -12,10 +12,10 @@ def process(school, url):
   athletic_url = f"{url}/api/v2/Sports"
 
   try:
-    response_api = request_url(athletic_url)
+    response = request_url(athletic_url)
 
-    if response_api and response_api.text and is_valid_json(response_api.text):
-      sports = json.loads(response_api.text)
+    if response and response.get('text') and is_valid_json(response.get('text')):
+      sports = json.loads(response.get('text'))
       if sports:
         for sport in sports:
           if sport and sport["shortName"] == "baseball" and sport["scheduleId"]:

@@ -32,7 +32,7 @@ def extract_domain(url, ignore_subdomain=False):
 
 def find_url(text):
   # Define a regex pattern for matching URLs
-  url_pattern = re.compile(r'https?://\S+?\.(?:com|edu|org)')
+  url_pattern = re.compile(r'https?://\S+?\.(?:com|edu|org|net)')
 
   # Find all matches in the text
   matches = re.findall(url_pattern, text)
@@ -42,14 +42,26 @@ def find_url(text):
   else:
     return None
 
-def request_url(url):
+def request_url(url, headOnly=False):
   success = None
   try:
     headers = {'Content-Type': 'text/plain; charset=utf-8', 'User-Agent': 'PostmanRuntime/7.33.0', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive'}
-    response = requests.get(url, headers=headers, timeout=15)
+    if headOnly:
+      response = requests.head(url, headers=headers, timeout=15, allow_redirects=True)
+    else:
+      response = requests.get(url, headers=headers, timeout=15)
+    
     response.raise_for_status()  # Raise an HTTPError for bad responses
     if response.text:
-      success = response.text
+      success = {
+        'url': response.url,
+        'text': response.text
+      }
+    elif response.url:
+      success = {
+        'url': response.url,
+        'text': None
+      }
   except requests.exceptions.HTTPError as http_err:
     logging.info(f"request_url() in common.py: HTTP error occurred: {http_err}")
   except requests.Timeout:
