@@ -114,6 +114,9 @@ def get_athletics_url(school):
     if school['url_athletics'] is None:
       if school['url_main'] != "" and school['url_main'] is not None:
         find_athletics_url(school)
+  else:
+    if not isinstance(school["url_athletics"], list):
+      school["url_athletics"] = [school["url_athletics"]]
 
   if school["url_athletics"] is not None:
     urls = []
@@ -128,14 +131,16 @@ def get_athletics_url(school):
     for url in school["url_athletics"]:    
       if not url.startswith("http"):
         url = f"https://{url}"
-      if url.endswith('/'):
-        url = url[:-1]  # Remove the last forward slash
-
+    
       # check for forwarded urls
       response = request_url(url, True)
       if response and response.get("url") != url:
         url = response.get("url")
 
+      if url.endswith('/'):
+        url = url[:-1]  # Remove the last forward slash
+
+      url = url.replace("/landing/index", "")
       urls.append(url)
 
     school["url_athletics"] = urls
@@ -151,6 +156,8 @@ def get_athletics_url(school):
 def find_athletics_url(school, url=None):
   second_try = False
   if not url:
+    if school['url_main'].endswith("/"):
+      school["url_main"] = school["url_main"][:-1]
     url = school['url_main']
     if not school["url_main"].startswith("http"):
       url = f"https://{school['url_main']}"
@@ -179,17 +186,25 @@ def find_athletics_url(school, url=None):
               found = True
 
             if found:
-              if link and link['href']:
-                url_found = find_url(link['href'])
+              if link and link.get('href'):
+                url_found = find_url(link.get('href'))
                 if url_found:
                   if url_found.lower() == school["url_main"].lower() or extract_domain(url_found.lower()) == extract_domain(school["url_main"].lower(), True):
-                    url_found = link['href']
+                    url_found = link.get('href')
 
                   urls.append(url_found.lower())
                 else:
-                  urls.append(f"{school['url_main']}{link['href']}")
+                  slash = ""
+                  if not school['url_main'].endswith("/") and not link['href'].startswith("/"):
+                    slash = "/"
+                  urls.append(f"{school['url_main']}{slash}{link['href']}")
 
-        school["url_athletics"] = list(set(urls))
+        if len(urls) > 0:
+          if not isinstance(school["url_athletics"], list):
+            school["url_athletics"] = []
+          school["url_athletics"].extend(urls)
+          school["url_athletics"] = list(set(school["url_athletics"]))
+
 
   except Exception as e:
     logging.error(f"find_athletics_url() in schools.py: An error occurred: {e}")

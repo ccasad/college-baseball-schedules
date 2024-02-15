@@ -45,11 +45,11 @@ def find_url(text):
 def request_url(url, headOnly=False):
   success = None
   try:
-    headers = {'Content-Type': 'text/plain; charset=utf-8', 'User-Agent': 'PostmanRuntime/7.33.0', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive'}
+    headers = {'Content-Type': 'text/plain; charset=utf-8', 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36', 'Accept': '*/*', 'Accept-Encoding': 'gzip, deflate, br', 'Connection': 'keep-alive'}
     if headOnly:
       response = requests.head(url, headers=headers, timeout=15, allow_redirects=True)
     else:
-      response = requests.get(url, headers=headers, timeout=15)
+      response = requests.get(url, headers=headers, timeout=15, allow_redirects=True)
     
     response.raise_for_status()  # Raise an HTTPError for bad responses
     if response.text:
