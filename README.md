@@ -3,9 +3,10 @@ TO DO
 * (DONE) Create a git repo
 
 * (DAD) Get schedules
-  - from all schools in google spreadsheet (D1, D2, D3 if possible, but start with D1)
-  - read in the google spreadsheet and loop through the schools
-  - parse out the schedules and write each to a file using the IPEDS number for the file name
+  - (DONE) from all schools in google spreadsheet (D1, D2, D3 if possible, but start with D1)
+  - (DONE) read in the google spreadsheet and loop through the schools
+  - (DONE) parse out the schedules and write each to a file using the IPEDS number for the file name
+  - issue with processor_alpha: schedule away games seems to have opponent as the home team?
 
 * (TREV) Build calendar files
   - go through each schedule file to make a calendar.ics file from it
