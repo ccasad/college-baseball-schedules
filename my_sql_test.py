@@ -1,4 +1,5 @@
 import mysql.connector
+import json
 
 db_config = {
   'user': 'casad_9',
@@ -16,7 +17,7 @@ try:
   cursor = connection.cursor()
 
   # Execute a sample query
-  query = "SELECT * FROM school"
+  query = "SELECT * FROM old_school"
   cursor.execute(query)
 
   # Fetch the column names
@@ -24,11 +25,19 @@ try:
   
   # Fetch the results
   results = cursor.fetchall()
+  schools = []
   for row in results:
-    id = row[column_names.index("id")]
-    name = row[column_names.index("name")]
-    url = row[column_names.index("url")]
-    print(f"{id} {name} {url}")
+    school = {}
+    for column in column_names:
+      if column != "geo":
+        school[column] = row[column_names.index(column)]
+
+    schools.append(school)
+  
+  # print(f"{schools}")
+
+  with open(f"./schools_from_mysql.json", 'w') as file:
+    json.dump(schools, file)
 
 except mysql.connector.Error as err:
   print(f"Error: {err}")
