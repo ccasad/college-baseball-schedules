@@ -1,8 +1,8 @@
 TO DO
 
-* (DONE) Create a git repo
-
-* (DAD) Get schedules
+* (DAD) 
+  - (DONE) Get schedules script
+  - (DONE) Create a git repo
   - (DONE) from all schools in google spreadsheet (D1, D2, D3 if possible, but start with D1)
   - (DONE) read in the google spreadsheet and loop through the schools
   - (DONE) parse out the schedules and write each to a file using the IPEDS number for the file name
