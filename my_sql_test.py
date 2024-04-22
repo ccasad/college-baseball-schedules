@@ -2,9 +2,9 @@ import mysql.connector
 import json
 
 db_config = {
-  'user': 'casad_9',
-  'password': 'w4sJyAywexSXAaFm',
-  'host': 'db110a.pair.com',
+  'user': '',
+  'password': '',
+  'host': '',
   'database': 'casad_collegebaseball',
   'raise_on_warnings': True
 }
